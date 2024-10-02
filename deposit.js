@@ -6,7 +6,7 @@ function clearall(){
         icon: 'warning',              
         iconColor: 'white',
         title: 'Are you sure?',        
-        text: 'Are you sure want to clear all data?', 
+        text: 'Are you sure want to logout?', 
         showCancelButton: true,        
         confirmButtonColor: 'red', 
         cancelButtonColor: 'green',     
@@ -96,8 +96,8 @@ function deposit() {
         return;
     }
     
-    // for getting crrntblnce
-    let currentBalance = parseFloat(localStorage.getItem(depositAc/count)) || 0.00; 
+     // getting current balance
+    let currentBalance = parseFloat(localStorage.getItem(depositAccount)) || 0.00;
 
     if (isNaN(currentBalance)) {
         Swal.fire({
@@ -111,12 +111,11 @@ function deposit() {
         });        return;
     }
 
+    // Storing updated balance amt
 
-    //for storing updated amount balance
     let updatedBalance = currentBalance + depositAmount;
 
     localStorage.setItem(depositAccount, updatedBalance.toFixed(2)); 
-
     Swal.fire({
         icon: 'success',
         iconColor: 'white',
@@ -132,9 +131,7 @@ function deposit() {
 
 
 
-function withdraw() 
-{
-
+function withdraw() {
     const withdrawamt = document.getElementById('wamount');
     const withdrawacct = document.getElementById('waccount');
     const wresult = document.getElementById('wresult'); 
@@ -142,7 +139,7 @@ function withdraw()
     let withdrawAmount = parseFloat(withdrawamt.value); 
     let withdrawAccount = withdrawacct.value.trim(); 
 
-    // for entering crrct amount
+    // entering crrct withdraw amount
     if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
         Swal.fire({
             icon: 'error',
@@ -187,7 +184,7 @@ function withdraw()
         return;
     }
 
-    //  insufficient balance
+    // insufficient amount chekking
     if (withdrawAmount > currentBalance) {
         Swal.fire({
             icon: 'error',
@@ -198,12 +195,16 @@ function withdraw()
             background: 'red',
             color: 'white',
         });
+        alert('Insufficient funds for this withdrawal.');
         return;
     }
 
-    // showing balance aftr withdrawal
+    // for showing balance aftr withdrawl
     let updatedBalance = currentBalance - withdrawAmount;
     localStorage.setItem(withdrawAccount, updatedBalance.toFixed(2)); 
+
+
+
 
     Swal.fire({
         icon: 'success',
