@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bank Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  
+    <style>
+        .red-placeholder::placeholder {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container w-75 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6" style="box-shadow: 4px 8px 12px rgb(179, 174, 174);border-radius: 12px;background-color: whitesmoke;">
+                <div class="mt-5">
+                    <div class="text-center">
+                        <img height="70px" src="https://bank-app-new-lc.netlify.app/images/bank.png" alt="">
+                        <h3 style="color: #6e63ff;">My Bank</h3>
+                    </div>
+                    <div class="">
+                        <form>
+                           
+                            <div class="">
+                                <label for="accountNumber"></label>
+                                <input id="accountNbr"  style="background: linear-gradient(rgb(239, 236, 236),rgb(231, 231, 231));border-radius: 22px;height: 50px;border-color: transparent;" type="text" class="form-control"  placeholder="Enter account number">
+                            </div>
+                            <div class="">
+                                <label for="password"></label>
+                                <input id="passwd" style="background: linear-gradient(rgb(239, 236, 236),rgb(231, 231, 231));border-radius: 22px;height: 50px;border-color: transparent;" type="password" class="form-control"  placeholder="Enter password">
+                            </div><br>
+                            <button onclick="login()" style="border-radius: 15px;background-color: #6e63ff;color: white;" type="button" class="btn btn-block">Login</button><br>
+
+<div class="d-flex justify-content-center">
+                            <a href=""><h6 class="text-center" style="color: #6e63ff;">Forgot Password</h6></a>
+                            <h6 style="margin-left: 10px;margin-right: 10px;">or</h6>
+                            <a  href="./registration.html" onclick="signup()"><h6 class="text-center" style="color: #6e63ff;">Sign up</h6></a>
+                        </div>
+                        </form><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="./login.js"></script>
+</body>
+</html>
