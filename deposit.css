@@ -57,3 +57,14 @@ h4 {
         font-size: 0.85rem;
     }
 }
+
+@media (max-width:376px){
+   .row h5{
+    font-size: 16px;
+   }
+
+   #lout{
+   
+    margin-bottom: 10px;
+   }
+}
